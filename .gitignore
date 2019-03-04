@@ -1,2 +1,9 @@
 # virtualenv
 scripts/venv/
+
+#pytest_Cache
+scripts/tests/__pycache__
+scripts/tests/.pytest_cache
+
+#git attributes
+.gitattributes

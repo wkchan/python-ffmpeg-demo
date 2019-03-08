@@ -10,6 +10,40 @@ class FFMpegWebcamCapturer:
 
     def __init__(self):
         pass
+
+
+    @staticmethod
+    def facetime_to_hls():
+        """ facetime function is designed for capturing video from facetime
+        camera and store it into a video
+        """
+        (
+            ffmpeg
+            .input('FaceTime', format='avfoundation', pix_fmt='uyvy422', framerate=30, s='1280x720')
+            .output(
+                '/Applications/MAMP/htdocs/hls/hlssample.m3u8', pix_fmt='yuv420p',\
+                 video_bitrate='1024000', f='hls', vcodec='libx264', preset='fast',\
+                 acodec="aac", audio_bitrate="128000", start_number=0, hls_time=10,\
+                 hls_list_size=0)
+            .overwrite_output()
+            .run()
+        )
+
+    @staticmethod
+    def facetime_to_rtmp():
+        """ facetime function is designed for capturing video from facetime
+        camera and store it into a video
+        """
+        (
+            ffmpeg
+            .input('FaceTime', format='avfoundation', pix_fmt='uyvy422', framerate=30, s='1280x720')
+            .output(
+                'rtmp://127.0.0.1:1935/live', pix_fmt='yuv420p', video_bitrate='1024000', f='flv',\
+                vcodec='libx264', preset='fast', acodec="aac", audio_bitrate="128000")
+            .overwrite_output()
+            .run()
+        )
+
     @staticmethod
     def facetime():
         """ facetime function is designed for capturing video from facetime
@@ -17,12 +51,13 @@ class FFMpegWebcamCapturer:
         """
         (
             ffmpeg
-            .input('FaceTime', format='avfoundation', pix_fmt='yuv420p', framerate=30, s='1280x720')
-            .output('out.mp4', pix_fmt='yuv420p', video_bitrate='1024000', preset='veryfast')
+            .input('FaceTime', format='avfoundation', pix_fmt='uyvy422', framerate=30, s='1280x720')
+            .output(
+                'output.mp4', pix_fmt='yuv420p', video_bitrate='1024000', f='mp4',\
+                vcodec='libx264', preset='fast', acodec="aac", audio_bitrate="128000")
             .overwrite_output()
             .run()
         )
-
     @staticmethod
     def capture_web_cam(out_filename: str, width: int = 1280, height: int = 720):
         """ capture_web_cam function is design for capturing the video from facetime camera

@@ -1,4 +1,26 @@
 # python-ffmpeg-demo
+### Version:
+- v0.1.2
+
+## Author
+* Linus Chan (wkchan(dot)linus(at)gmail(dot)com)
+
+## Comments
+* Added stream to hls feature
+* Added stream to rtmp feature
+
+### Version:
+- v0.1.1
+
+## Author
+* Linus Chan (wkchan(dot)linus(at)gmail(dot)com)
+
+## Comments
+* Updated naming style
+* Added two pytest test cases
+** ffprobe availability
+** ffmpeg functionality
+
 
 ### Version:
 - v0.1.0

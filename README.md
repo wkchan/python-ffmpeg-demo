@@ -6,8 +6,19 @@
 * Linus Chan (wkchan(dot)linus(at)gmail(dot)com)
 
 ## Comments
+* currently available in MacOS only
 * Added stream to hls feature
 * Added stream to rtmp feature
+
+## Prerequisites
+
+* ```brew install ffmpeg```
+* ```brew install ffprobe```
+* install MAMP
+* using nginx wirh rtmp module for the local RTMP server ```docker run -d -p 1935:1935 --name nginx-rtmp tiangolo/nginx-rtmp```
+
+
+
 
 ### Version:
 - v0.1.1

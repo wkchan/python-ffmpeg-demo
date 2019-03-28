@@ -1,1 +1,9 @@
-language: python3.7.2
+language: python
+python:
+  - "3.7"
+# command to install dependencies
+install:
+  - pip3 install -r requirements.txt
+# command to run tests
+script:
+  - pytest

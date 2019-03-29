@@ -7,10 +7,12 @@ dist: xenial
 python: "3.7"
 
 # command to install dependencies
+before_install:
+  - sudo apt-get install ffmpeg
+  - sudo apt-get install ffprobe
+
 install:
-  - apt-get install ffmpeg
-  - apt-get install ffprobe
   - pip3 install -r requirements.txt
 # command to run tests
 script:
-  - pytest 
+  - pytest

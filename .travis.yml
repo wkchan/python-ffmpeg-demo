@@ -15,4 +15,4 @@ install:
   - pip3 install -r requirements.txt
 # command to run tests
 script:
-  - pytest --rootdir=/home/travis/build/wkchan/python-ffmpeg-demo/scripts/tests
+  - pytest --rootdir=/home/travis/build/wkchan/python-ffmpeg-demo/scripts/tests /home/travis/build/wkchan/python-ffmpeg-demo/scripts/tests

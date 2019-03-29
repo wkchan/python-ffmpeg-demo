@@ -8,9 +8,9 @@ python: "3.7"
 
 # command to install dependencies
 install:
-  - apt-get instal ffmpeg
+  - apt-get install ffmpeg
   - apt-get install ffprobe
   - pip3 install -r requirements.txt
 # command to run tests
 script:
-  - pytest
+  - pytest 

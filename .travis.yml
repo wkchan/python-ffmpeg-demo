@@ -1,1 +1,18 @@
-language: python3.7.2
+os: xenial
+#travis ci with python 3.7 workaround:
+#ref: https://github.com/travis-ci/travis-ci/issues/9069#issuecomment-425720905
+language: python
+sudo: required
+dist: xenial
+python: "3.7"
+
+# command to install dependencies
+before_install:
+  - sudo apt-get install ffmpeg
+  #- sudo apt-get install ffprobe
+
+install:
+  - pip3 install -r requirements.txt
+# command to run tests
+script:
+  - pytest --rootdir=/home/travis/build/wkchan/python-ffmpeg-demo/scripts/tests/ /home/travis/build/wkchan/python-ffmpeg-demo/scripts/tests/

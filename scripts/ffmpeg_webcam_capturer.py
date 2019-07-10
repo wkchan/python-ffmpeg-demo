@@ -34,7 +34,6 @@ class FFMpegWebcamCapturer:
         """ Capture Screen in macOS and stream it to facebook
         """
         (
-            # .input('1:1', format='avfoundation', pix_fmt='uyvy422', framerate=30, s='1280x720')
             ffmpeg
             .input('1:1', format='avfoundation', pix_fmt='uyvy422', framerate=30, s='1280x800')
             .output(

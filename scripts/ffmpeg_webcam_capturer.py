@@ -28,6 +28,20 @@ class FFMpegWebcamCapturer:
             .overwrite_output()
             .run()
         )
+    @staticmethod
+    def facetime_to_facebook(stream_key: str):
+        """ facetime function is designed for capturing video from facetime
+        camera and store it into a video
+        """
+        (
+            ffmpeg
+            .input('0:1', format='avfoundation', pix_fmt='uyvy422', framerate=30, s='1280x720')
+            .output(
+                'rtmps://live-api-s.facebook.com:443/rtmp/{}'.format(stream_key), s='640x360', pix_fmt='yuv420p', video_bitrate='500000', f='flv',\
+                vcodec='libx264', preset='fast', x264opts='keyint=15', g='30', acodec="aac", audio_bitrate="128000" )
+            .overwrite_output()
+            .run()
+        )
 
     @staticmethod
     def facetime_to_rtmp():

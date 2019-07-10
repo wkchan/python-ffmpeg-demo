@@ -34,8 +34,9 @@ class FFMpegWebcamCapturer:
         """ Capture Screen in macOS and stream it to facebook
         """
         (
+            # .input('1:1', format='avfoundation', pix_fmt='uyvy422', framerate=30, s='1280x720')
             ffmpeg
-            .input('1:1', format='avfoundation', pix_fmt='uyvy422', framerate=30, s='1280x720')
+            .input('1:1', format='avfoundation', pix_fmt='uyvy422', framerate=30, s='1280x800')
             .output(
                 'rtmps://live-api-s.facebook.com:443/rtmp/{}'.format(stream_key), s='640x400', pix_fmt='yuv420p', video_bitrate='500000', f='flv',\
                 vcodec='libx264', preset='fast', x264opts='keyint=15', g='30', acodec="aac", audio_bitrate="128000" )

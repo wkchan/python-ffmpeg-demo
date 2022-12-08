@@ -3,7 +3,7 @@ astroid==2.2.0
 attrs==18.2.0
 Automat==0.7.0
 autopep8==1.4.3
-certifi==2018.11.29
+certifi==2022.12.7
 cffi==1.12.2
 chardet==3.0.4
 constantly==15.1.0
